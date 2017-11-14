@@ -51,6 +51,10 @@ modules.builtin
 /debian/
 
 #
+# Ignore virtual python2
+/venv/*
+
+#
 # git files that we don't want to ignore even it they are dot-files
 #
 !.gitignore
