@@ -75,6 +75,7 @@ zinstall install: vmlinux
 %.dtb: scripts
 	$(Q)$(MAKE) $(build)=$(boot)/dts $(boot)/dts/$@
 
+.PHONY: dtbs
 dtbs: scripts
 	$(Q)$(MAKE) $(build)=$(boot)/dts dtbs
 ifeq ($(CONFIG_MACH_LGE),y)
@@ -82,6 +83,7 @@ ifeq ($(CONFIG_MACH_LGE),y)
 else
 	$(Q)$(MAKE) $(build)=$(boot)/dts/qcom dtbs
 endif
+	@true
 
 PHONY += vdso_install
 vdso_install:
